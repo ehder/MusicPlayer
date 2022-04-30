@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".PlayerActivity"
+    android:background="@drawable/playingbg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_songName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="Song name"
+            android:textColor="#FFF"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:textStyle="italic"/>
+
+        <ImageView
+            android:id="@+id/img_view"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/music"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            >
+            <SeekBar
+                android:id="@+id/seek_bar"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="40dp"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                >
+            </SeekBar>
+
+            <TextView
+                android:id="@+id/tv_start"
+                android:layout_toLeftOf="@id/seek_bar"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="false"
+                android:layout_marginLeft="20dp"
+                android:text="0:10"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+
+                />
+            <TextView
+                android:id="@+id/tv_stop"
+                android:layout_toRightOf="@id/seek_bar"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="false"
+                android:layout_marginRight="20dp"
+                android:text="4:10"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        android:alpha="0.7"
+        android:orientation="vertical"
+        android:layout_weight="3">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/play"
+                android:layout_centerInParent="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_play"
+                />
+
+            <ImageView
+                android:id="@+id/forward"
+                android:layout_toRightOf="@+id/play"
+                android:layout_centerInParent="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_forward"
+                />
+            <ImageView
+                android:id="@+id/next"
+                android:layout_toRightOf="@+id/forward"
+                android:layout_centerInParent="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_next"
+                />
+
+
+            <ImageView
+                android:id="@+id/rewind"
+                android:layout_toLeftOf="@+id/play"
+                android:layout_centerInParent="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_rewind"
+                />
+
+            <ImageView
+                android:id="@+id/previous"
+                android:layout_toLeftOf="@+id/rewind"
+                android:layout_centerInParent="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_previous"
+                />
+
+            <com.gauravk.audiovisualizer.visualizer.BarVisualizer
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/bar"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                custom:avDensity="0.5"
+                custom:avType="outline"
+                custom:avWidth="4dp"
+                android:layout_alignParentBottom="true"
+                custom:avColor="#FF362E"
+                custom:avSpeed="normal"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
